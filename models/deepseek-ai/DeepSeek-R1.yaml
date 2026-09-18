@@ -32,7 +32,6 @@ model:
   supports_dcp: true
   base_args:
     - "--trust-remote-code"
-    - "--enable-expert-parallel"
   base_env: {}
 
 features:
