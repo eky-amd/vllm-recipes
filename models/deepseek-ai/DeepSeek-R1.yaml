@@ -128,6 +128,17 @@ guide: |
 
   ### 8xH200 / 8xMI300X (FP8)
 
+  Tensor Parallel (TP8) — ROCm:
+  ```bash
+  export VLLM_ROCM_USE_AITER=1
+  export VLLM_ROCM_QUICK_REDUCE_QUANTIZATION=INT4
+  export VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS=1
+
+  vllm serve deepseek-ai/DeepSeek-R1 \
+    --trust-remote-code \
+    --tensor-parallel-size 8 \
+  ```
+
   Tensor Parallel + Expert Parallel (TP8+EP) — CUDA:
   ```bash
   vllm serve deepseek-ai/DeepSeek-R1-0528 \
@@ -139,6 +150,8 @@ guide: |
   Tensor Parallel + Expert Parallel (TP8+EP) — ROCm:
   ```bash
   export VLLM_ROCM_USE_AITER=1
+  export VLLM_ROCM_QUICK_REDUCE_QUANTIZATION=INT4
+  export VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS=1
 
   vllm serve deepseek-ai/DeepSeek-R1 \
     --trust-remote-code \
