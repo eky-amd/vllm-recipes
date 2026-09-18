@@ -86,6 +86,7 @@ hardware_overrides:
     extra_args: []
     extra_env:
       VLLM_ROCM_USE_AITER: "1"
+      VLLM_ROCM_QUICK_REDUCE_QUANTIZATION: "INT4"
       VLLM_ROCM_USE_AITER_FUSION_SHARED_EXPERTS: "1"
 
 strategy_overrides:
